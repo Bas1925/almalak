@@ -7,7 +7,6 @@ import {
   Search,
   Heart,
   ShoppingBag,
-  User,
   Menu,
   X,
   Trash2,
@@ -169,14 +168,6 @@ export function Header({
               className={cn("h-5 w-5", cartBounce && "animate-cart-bounce")}
             />
           </IconWithBadge>
-
-          <button
-            type="button"
-            aria-label={dict.common.account}
-            className="hidden rounded-full p-2 text-sage-700 transition hover:bg-white sm:block"
-          >
-            <User className="h-5 w-5" />
-          </button>
         </div>
       </div>
 
