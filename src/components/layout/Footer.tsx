@@ -29,9 +29,9 @@ export function Footer({
 
   return (
     <footer id="footer" className="bg-sage-800 text-cream-200">
-      <div className="container-px grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="container-px grid grid-cols-2 gap-x-6 gap-y-9 py-12 lg:grid-cols-4 lg:gap-10 lg:py-14">
         {/* brand */}
-        <div>
+        <div className="col-span-2 lg:col-span-1">
           <div className="flex items-center gap-3">
             <Image
               src="/brand/logo.jpeg"
