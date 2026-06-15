@@ -1,0 +1,1693 @@
+[
+  {
+    "id": "p-001",
+    "slug": "natural-rose-arrangement",
+    "name": {
+      "ar": "بوكيه ورد أحمر",
+      "en": "Red Rose Bouquet",
+      "he": "זר ורדים אדומים"
+    },
+    "category": "natural-flowers",
+    "price": 250,
+    "compareAt": 300,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/flowers-1.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true,
+    "variants": [
+      {
+        "id": "s",
+        "label": {
+          "ar": "صغير",
+          "en": "Small",
+          "he": "קטן"
+        },
+        "priceDelta": 0
+      },
+      {
+        "id": "m",
+        "label": {
+          "ar": "وسط",
+          "en": "Medium",
+          "he": "בינוני"
+        },
+        "priceDelta": 60
+      },
+      {
+        "id": "l",
+        "label": {
+          "ar": "كبير",
+          "en": "Large",
+          "he": "גדול"
+        },
+        "priceDelta": 120
+      }
+    ]
+  },
+  {
+    "id": "p-002",
+    "slug": "luxury-perfume-box",
+    "name": {
+      "ar": "بوكس عطر فاخر",
+      "en": "Luxury Perfume Box",
+      "he": "מארז בושם יוקרתי"
+    },
+    "category": "perfumes",
+    "price": 195,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-1.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-003",
+    "slug": "personalized-mug",
+    "name": {
+      "ar": "كوب مطبوع مخصّص",
+      "en": "Personalized Mug",
+      "he": "ספל מודפס אישי"
+    },
+    "category": "mugs",
+    "price": 65,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/mug-1.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true,
+    "variants": [
+      {
+        "id": "white",
+        "label": {
+          "ar": "أبيض",
+          "en": "White",
+          "he": "לבן"
+        },
+        "priceDelta": 0
+      },
+      {
+        "id": "magic",
+        "label": {
+          "ar": "سحري",
+          "en": "Magic",
+          "he": "קסם"
+        },
+        "priceDelta": 20
+      }
+    ]
+  },
+  {
+    "id": "p-004",
+    "slug": "engagement-rose-bouquet",
+    "name": {
+      "ar": "بوكيه عقد قِران",
+      "en": "Engagement Rose Bouquet",
+      "he": "זר ורדים לאירוסין"
+    },
+    "category": "natural-flowers",
+    "price": 280,
+    "compareAt": 330,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/wedding-1.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-005",
+    "slug": "appreciation-plaque",
+    "name": {
+      "ar": "درع شكر وتقدير",
+      "en": "Appreciation Plaque",
+      "he": "מגן הוקרה"
+    },
+    "category": "plaques",
+    "price": 195,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/plaque-1.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-006",
+    "slug": "decorative-wooden-frame",
+    "name": {
+      "ar": "برواز خشبي مزخرف",
+      "en": "Decorative Wooden Frame",
+      "he": "מסגרת עץ מעוטרת"
+    },
+    "category": "wooden-frames",
+    "price": 150,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/frame-1.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-007",
+    "slug": "large-teddy-bear",
+    "name": {
+      "ar": "دبدوب كبير فاخر",
+      "en": "Large Teddy Bear",
+      "he": "דובי גדול יוקרתי"
+    },
+    "category": "teddy-gifts",
+    "price": 320,
+    "compareAt": 380,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-2.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-008",
+    "slug": "foam-rose-favors",
+    "name": {
+      "ar": "توزيعات ورد فوم",
+      "en": "Foam Rose Favors",
+      "he": "מזכרות ורדים"
+    },
+    "category": "natural-flowers",
+    "price": 35,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-1.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-009",
+    "slug": "mixed-flower-arrangement",
+    "name": {
+      "ar": "تنسيق ورد مشكّل",
+      "en": "Mixed Flower Arrangement",
+      "he": "סידור פרחים מעורב"
+    },
+    "category": "natural-flowers",
+    "price": 220,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/flowers-3.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-010",
+    "slug": "mini-favor-bouquets",
+    "name": {
+      "ar": "بوكيهات توزيعات",
+      "en": "Mini Favor Bouquets",
+      "he": "זרי מזכרת"
+    },
+    "category": "natural-flowers",
+    "price": 40,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-2.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-011",
+    "slug": "rose-money-garland",
+    "name": {
+      "ar": "طوق ورد ونقود",
+      "en": "Rose & Money Garland",
+      "he": "ענק ורדים וכסף"
+    },
+    "category": "natural-flowers",
+    "price": 300,
+    "compareAt": 360,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/wedding-2.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-012",
+    "slug": "motivational-glass-mug",
+    "name": {
+      "ar": "كوب زجاجي محفّز",
+      "en": "Motivational Glass Mug",
+      "he": "ספל זכוכית עם כיתוב"
+    },
+    "category": "mugs",
+    "price": 70,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/mug-2.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-013",
+    "slug": "newborn-teddy-basket",
+    "name": {
+      "ar": "سلة مولود بدبدوب",
+      "en": "Newborn Teddy Basket",
+      "he": "סלסלת לידה עם דובי"
+    },
+    "category": "natural-flowers",
+    "price": 260,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-1.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-014",
+    "slug": "wooden-photo-frame",
+    "name": {
+      "ar": "برواز صورة خشبي",
+      "en": "Wooden Photo Frame",
+      "he": "מסגרת תמונה מעץ"
+    },
+    "category": "wooden-frames",
+    "price": 130,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/frame-2.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-015",
+    "slug": "oriental-luxury-perfume",
+    "name": {
+      "ar": "عطر شرقي فاخر",
+      "en": "Oriental Luxury Perfume",
+      "he": "בושם מזרחי יוקרתי"
+    },
+    "category": "perfumes",
+    "price": 210,
+    "compareAt": 250,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-2.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-016",
+    "slug": "wooden-honor-plaque",
+    "name": {
+      "ar": "درع تكريم خشبي",
+      "en": "Wooden Honor Plaque",
+      "he": "מגן הוקרה מעץ"
+    },
+    "category": "plaques",
+    "price": 175,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/plaque-2.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-017",
+    "slug": "premium-school-backpack",
+    "name": {
+      "ar": "حقيبة مدرسية مميزة",
+      "en": "Premium School Backpack",
+      "he": "תיק בית ספר פרימיום"
+    },
+    "category": "school",
+    "price": 120,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/school-1.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-018",
+    "slug": "school-stationery-set",
+    "name": {
+      "ar": "طقم قرطاسية مدرسي",
+      "en": "School Stationery Set",
+      "he": "סט מכשירי כתיבה"
+    },
+    "category": "school",
+    "price": 85,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/school-2.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-019",
+    "slug": "graduate-money-bouquet",
+    "name": {
+      "ar": "بوكيه ورد ونقود للخريجة",
+      "en": "Graduate Money Bouquet",
+      "he": "זר פרחים וכסף לבוגרת"
+    },
+    "category": "natural-flowers",
+    "price": 350,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/flowers-2.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-020",
+    "slug": "colorful-deluxe-bouquet",
+    "name": {
+      "ar": "بوكيه ملوّن فاخر",
+      "en": "Colorful Deluxe Bouquet",
+      "he": "זר צבעוני יוקרתי"
+    },
+    "category": "natural-flowers",
+    "price": 230,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/flowers-4.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-021",
+    "slug": "gerbera-bouquet",
+    "name": {
+      "ar": "بوكيه جربيرا",
+      "en": "Gerbera Bouquet",
+      "he": "זר גרברה"
+    },
+    "category": "natural-flowers",
+    "price": 210,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/flowers-5.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-022",
+    "slug": "pink-rose-bouquet",
+    "name": {
+      "ar": "بوكيه ورد زهري",
+      "en": "Pink Rose Bouquet",
+      "he": "זר ורדים ורודים"
+    },
+    "category": "natural-flowers",
+    "price": 260,
+    "compareAt": 310,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/flowers-6.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-023",
+    "slug": "elegant-blue-bouquet",
+    "name": {
+      "ar": "بوكيه أزرق راقٍ",
+      "en": "Elegant Blue Bouquet",
+      "he": "זר כחול אלגנטי"
+    },
+    "category": "natural-flowers",
+    "price": 240,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/flowers-7.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-024",
+    "slug": "photo-rose-bouquet",
+    "name": {
+      "ar": "بوكيه ورد بصورة",
+      "en": "Photo Rose Bouquet",
+      "he": "זר ורדים עם תמונה"
+    },
+    "category": "natural-flowers",
+    "price": 270,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/flowers-8.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-025",
+    "slug": "butterfly-bouquet",
+    "name": {
+      "ar": "بوكيه فراشات",
+      "en": "Butterfly Bouquet",
+      "he": "זר פרפרים"
+    },
+    "category": "natural-flowers",
+    "price": 200,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/flowers-9.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-026",
+    "slug": "floral-cork-mug",
+    "name": {
+      "ar": "كوب ورد بقاعدة فلين",
+      "en": "Floral Cork-Base Mug",
+      "he": "ספל פרחוני עם בסיס שעם"
+    },
+    "category": "mugs",
+    "price": 75,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/mug-3.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-027",
+    "slug": "personalized-travel-mug",
+    "name": {
+      "ar": "كوب حراري بالاسم",
+      "en": "Personalized Travel Mug",
+      "he": "ספל תרמי אישי"
+    },
+    "category": "mugs",
+    "price": 90,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/mug-4.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-028",
+    "slug": "bride-money-garland",
+    "name": {
+      "ar": "طوق نقود للعروس",
+      "en": "Bride Money Garland",
+      "he": "ענק כסף לכלה"
+    },
+    "category": "natural-flowers",
+    "price": 320,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/wedding-3.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-029",
+    "slug": "groom-money-sash",
+    "name": {
+      "ar": "وسام العريس بالنقود",
+      "en": "Groom Money Sash",
+      "he": "סרט כסף לחתן"
+    },
+    "category": "natural-flowers",
+    "price": 350,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/wedding-4.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-030",
+    "slug": "favor-arrangement-1",
+    "name": {
+      "ar": "توزيعة مميزة",
+      "en": "Signature Favor",
+      "he": "מזכרת מעוצבת"
+    },
+    "category": "giveaways",
+    "price": 30,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-3.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-031",
+    "slug": "favor-arrangement-2",
+    "name": {
+      "ar": "توزيعة أنيقة",
+      "en": "Elegant Favor",
+      "he": "מזכרת אלגנטית"
+    },
+    "category": "giveaways",
+    "price": 28,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-4.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-032",
+    "slug": "favor-arrangement-3",
+    "name": {
+      "ar": "توزيعة ورد صغيرة",
+      "en": "Mini Rose Favor",
+      "he": "מזכרת ורד קטנה"
+    },
+    "category": "giveaways",
+    "price": 25,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-5.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-033",
+    "slug": "favor-arrangement-4",
+    "name": {
+      "ar": "توزيعة مناسبات",
+      "en": "Occasion Favor",
+      "he": "מזכרת לאירוע"
+    },
+    "category": "giveaways",
+    "price": 32,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-6.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-034",
+    "slug": "favor-arrangement-5",
+    "name": {
+      "ar": "توزيعة فاخرة",
+      "en": "Deluxe Favor",
+      "he": "מזכרת יוקרתית"
+    },
+    "category": "giveaways",
+    "price": 38,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-7.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-035",
+    "slug": "favor-arrangement-6",
+    "name": {
+      "ar": "توزيعة هدية",
+      "en": "Gift Favor",
+      "he": "מזכרת מתנה"
+    },
+    "category": "giveaways",
+    "price": 27,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-8.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-036",
+    "slug": "favor-arrangement-7",
+    "name": {
+      "ar": "توزيعة ملوّنة",
+      "en": "Colorful Favor",
+      "he": "מזכרת צבעונית"
+    },
+    "category": "giveaways",
+    "price": 26,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-9.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-037",
+    "slug": "favor-arrangement-8",
+    "name": {
+      "ar": "توزيعة راقية",
+      "en": "Refined Favor",
+      "he": "מזכרת מעודנת"
+    },
+    "category": "giveaways",
+    "price": 34,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-10.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-038",
+    "slug": "favor-arrangement-9",
+    "name": {
+      "ar": "توزيعة عروس",
+      "en": "Bridal Favor",
+      "he": "מזכרת כלה"
+    },
+    "category": "giveaways",
+    "price": 40,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-11.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-039",
+    "slug": "favor-arrangement-10",
+    "name": {
+      "ar": "توزيعة كلاسيك",
+      "en": "Classic Favor",
+      "he": "מזכרת קלאסית"
+    },
+    "category": "giveaways",
+    "price": 24,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-12.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-040",
+    "slug": "favor-arrangement-11",
+    "name": {
+      "ar": "توزيعة ضيوف",
+      "en": "Guest Favor",
+      "he": "מזכרת לאורחים"
+    },
+    "category": "giveaways",
+    "price": 22,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-13.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-041",
+    "slug": "favor-arrangement-12",
+    "name": {
+      "ar": "توزيعة احتفال",
+      "en": "Celebration Favor",
+      "he": "מזכרת חגיגה"
+    },
+    "category": "giveaways",
+    "price": 29,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-14.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-042",
+    "slug": "favor-arrangement-13",
+    "name": {
+      "ar": "توزيعة مميزة فاخرة",
+      "en": "Premium Favor",
+      "he": "מזכרת פרימיום"
+    },
+    "category": "giveaways",
+    "price": 36,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-15.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-043",
+    "slug": "favor-arrangement-14",
+    "name": {
+      "ar": "توزيعة شكر",
+      "en": "Thank-You Favor",
+      "he": "מזכרת תודה"
+    },
+    "category": "giveaways",
+    "price": 31,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/giveaway-16.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-044",
+    "slug": "wedding-arrangement-1",
+    "name": {
+      "ar": "تنسيق عرس مميز",
+      "en": "Signature Wedding Arrangement",
+      "he": "סידור חתונה מעוצב"
+    },
+    "category": "weddings",
+    "price": 320,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/wedding-5.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-045",
+    "slug": "wedding-arrangement-2",
+    "name": {
+      "ar": "تنسيق عرس فاخر",
+      "en": "Deluxe Wedding Arrangement",
+      "he": "סידור חתונה יוקרתי"
+    },
+    "category": "weddings",
+    "price": 360,
+    "compareAt": 420,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/wedding-6.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-046",
+    "slug": "wedding-arrangement-3",
+    "name": {
+      "ar": "بوكيه عروس",
+      "en": "Bridal Bouquet",
+      "he": "זר כלה"
+    },
+    "category": "weddings",
+    "price": 290,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/wedding-7.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-047",
+    "slug": "wedding-arrangement-4",
+    "name": {
+      "ar": "تنسيق عرس راقٍ",
+      "en": "Elegant Wedding Arrangement",
+      "he": "סידור חתונה אלגנטי"
+    },
+    "category": "weddings",
+    "price": 340,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/wedding-8.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-048",
+    "slug": "wedding-arrangement-5",
+    "name": {
+      "ar": "طاولة عرس مزيّنة",
+      "en": "Decorated Wedding Table",
+      "he": "שולחן חתונה מעוטר"
+    },
+    "category": "weddings",
+    "price": 380,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/wedding-9.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-049",
+    "slug": "wedding-arrangement-6",
+    "name": {
+      "ar": "تنسيق عرس كلاسيك",
+      "en": "Classic Wedding Arrangement",
+      "he": "סידור חתונה קלאסי"
+    },
+    "category": "weddings",
+    "price": 330,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/wedding-10.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-050",
+    "slug": "wedding-arrangement-7",
+    "name": {
+      "ar": "تنسيق عرس ملكي",
+      "en": "Royal Wedding Arrangement",
+      "he": "סידור חתונה מלכותי"
+    },
+    "category": "weddings",
+    "price": 400,
+    "compareAt": 460,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/wedding-11.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-051",
+    "slug": "wedding-arrangement-8",
+    "name": {
+      "ar": "تنسيق عرس أنيق",
+      "en": "Chic Wedding Arrangement",
+      "he": "סידור חתונה שיק"
+    },
+    "category": "weddings",
+    "price": 350,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/wedding-12.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-052",
+    "slug": "wooden-frame-3",
+    "name": {
+      "ar": "برواز خشب مميز",
+      "en": "Signature Wooden Frame",
+      "he": "מסגרת עץ מעוצבת"
+    },
+    "category": "wooden-frames",
+    "price": 145,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/frame-3.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-053",
+    "slug": "wooden-frame-4",
+    "name": {
+      "ar": "برواز خشب منقوش",
+      "en": "Engraved Wooden Frame",
+      "he": "מסגרת עץ חרוטה"
+    },
+    "category": "wooden-frames",
+    "price": 160,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/frame-4.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-054",
+    "slug": "wooden-frame-5",
+    "name": {
+      "ar": "برواز خشب بصورة",
+      "en": "Wooden Photo Frame",
+      "he": "מסגרת עץ עם תמונה"
+    },
+    "category": "wooden-frames",
+    "price": 170,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/frame-5.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-055",
+    "slug": "wooden-frame-6",
+    "name": {
+      "ar": "برواز خشب فاخر",
+      "en": "Deluxe Wooden Frame",
+      "he": "מסגרת עץ יוקרתית"
+    },
+    "category": "wooden-frames",
+    "price": 185,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/frame-6.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-056",
+    "slug": "wooden-frame-7",
+    "name": {
+      "ar": "برواز خشب أنيق",
+      "en": "Elegant Wooden Frame",
+      "he": "מסגרת עץ אלגנטית"
+    },
+    "category": "wooden-frames",
+    "price": 140,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/frame-7.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-057",
+    "slug": "teddy-gift-3",
+    "name": {
+      "ar": "دبدوب هدية",
+      "en": "Teddy Bear Gift",
+      "he": "מתנת דובי"
+    },
+    "category": "teddy-gifts",
+    "price": 180,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-3.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-058",
+    "slug": "teddy-gift-4",
+    "name": {
+      "ar": "دبدوب مع ورد",
+      "en": "Teddy with Roses",
+      "he": "דובי עם ורדים"
+    },
+    "category": "teddy-gifts",
+    "price": 220,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-4.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-059",
+    "slug": "teddy-gift-5",
+    "name": {
+      "ar": "سلة هدايا بدبدوب",
+      "en": "Teddy Gift Basket",
+      "he": "סלסלת מתנה עם דובי"
+    },
+    "category": "teddy-gifts",
+    "price": 250,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-5.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-060",
+    "slug": "teddy-gift-6",
+    "name": {
+      "ar": "دبدوب صغير",
+      "en": "Small Teddy Bear",
+      "he": "דובי קטן"
+    },
+    "category": "teddy-gifts",
+    "price": 90,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-6.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-061",
+    "slug": "teddy-gift-7",
+    "name": {
+      "ar": "دبدوب فاخر",
+      "en": "Deluxe Teddy Bear",
+      "he": "דובי יוקרתי"
+    },
+    "category": "teddy-gifts",
+    "price": 280,
+    "compareAt": 330,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-7.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-062",
+    "slug": "teddy-gift-8",
+    "name": {
+      "ar": "هدية دبدوب مميزة",
+      "en": "Signature Teddy Gift",
+      "he": "מתנת דובי מעוצבת"
+    },
+    "category": "teddy-gifts",
+    "price": 200,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-8.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-063",
+    "slug": "teddy-gift-9",
+    "name": {
+      "ar": "دبدوب عيد ميلاد",
+      "en": "Birthday Teddy Bear",
+      "he": "דובי יום הולדת"
+    },
+    "category": "teddy-gifts",
+    "price": 160,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-9.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-064",
+    "slug": "teddy-gift-10",
+    "name": {
+      "ar": "دبدوب رومانسي",
+      "en": "Romantic Teddy Bear",
+      "he": "דובי רומנטי"
+    },
+    "category": "teddy-gifts",
+    "price": 210,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-10.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-065",
+    "slug": "teddy-gift-11",
+    "name": {
+      "ar": "دبدوب كبير",
+      "en": "Large Teddy Bear",
+      "he": "דובי גדול"
+    },
+    "category": "teddy-gifts",
+    "price": 300,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-11.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-066",
+    "slug": "teddy-gift-12",
+    "name": {
+      "ar": "دبدوب مع بالونات",
+      "en": "Teddy with Balloons",
+      "he": "דובי עם בלונים"
+    },
+    "category": "teddy-gifts",
+    "price": 230,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-12.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-067",
+    "slug": "teddy-gift-13",
+    "name": {
+      "ar": "هدية دبدوب راقية",
+      "en": "Elegant Teddy Gift",
+      "he": "מתנת דובי אלגנטית"
+    },
+    "category": "teddy-gifts",
+    "price": 240,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-13.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-068",
+    "slug": "teddy-gift-14",
+    "name": {
+      "ar": "دبدوب أبيض",
+      "en": "White Teddy Bear",
+      "he": "דובי לבן"
+    },
+    "category": "teddy-gifts",
+    "price": 190,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-14.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-069",
+    "slug": "teddy-gift-15",
+    "name": {
+      "ar": "دبدوب بصندوق هدية",
+      "en": "Boxed Teddy Gift",
+      "he": "דובי בקופסת מתנה"
+    },
+    "category": "teddy-gifts",
+    "price": 260,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-15.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-070",
+    "slug": "teddy-gift-16",
+    "name": {
+      "ar": "دبدوب ناعم",
+      "en": "Soft Plush Teddy",
+      "he": "דובי רך"
+    },
+    "category": "teddy-gifts",
+    "price": 150,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-16.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-071",
+    "slug": "teddy-gift-17",
+    "name": {
+      "ar": "دبدوب مع قلب",
+      "en": "Teddy with Heart",
+      "he": "דובי עם לב"
+    },
+    "category": "teddy-gifts",
+    "price": 200,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-17.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-072",
+    "slug": "teddy-gift-18",
+    "name": {
+      "ar": "هدية دبدوب فاخرة",
+      "en": "Luxury Teddy Gift",
+      "he": "מתנת דובי יוקרתית"
+    },
+    "category": "teddy-gifts",
+    "price": 290,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-18.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-073",
+    "slug": "teddy-gift-19",
+    "name": {
+      "ar": "دبدوب مولود جديد",
+      "en": "Newborn Teddy Bear",
+      "he": "דובי ללידה"
+    },
+    "category": "teddy-gifts",
+    "price": 240,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-19.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-074",
+    "slug": "teddy-gift-20",
+    "name": {
+      "ar": "دبدوب مناسبات",
+      "en": "Occasion Teddy Bear",
+      "he": "דובי לאירועים"
+    },
+    "category": "teddy-gifts",
+    "price": 270,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/teddy-20.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-075",
+    "slug": "perfume-3",
+    "name": {
+      "ar": "عطر فاخر",
+      "en": "Luxury Perfume",
+      "he": "בושם יוקרתי"
+    },
+    "category": "perfumes",
+    "price": 200,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-3.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-076",
+    "slug": "perfume-4",
+    "name": {
+      "ar": "بوكس عطر هدية",
+      "en": "Perfume Gift Box",
+      "he": "מארז בושם מתנה"
+    },
+    "category": "perfumes",
+    "price": 230,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-4.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-077",
+    "slug": "perfume-5",
+    "name": {
+      "ar": "عطر شرقي",
+      "en": "Oriental Perfume",
+      "he": "בושם מזרחי"
+    },
+    "category": "perfumes",
+    "price": 210,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-5.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-078",
+    "slug": "perfume-6",
+    "name": {
+      "ar": "عطر نسائي",
+      "en": "Women's Perfume",
+      "he": "בושם לאישה"
+    },
+    "category": "perfumes",
+    "price": 190,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-6.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-079",
+    "slug": "perfume-7",
+    "name": {
+      "ar": "عطر رجالي",
+      "en": "Men's Perfume",
+      "he": "בושם לגבר"
+    },
+    "category": "perfumes",
+    "price": 195,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-7.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-080",
+    "slug": "perfume-8",
+    "name": {
+      "ar": "طقم عطور",
+      "en": "Perfume Set",
+      "he": "סט בשמים"
+    },
+    "category": "perfumes",
+    "price": 260,
+    "compareAt": 310,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-8.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-081",
+    "slug": "perfume-9",
+    "name": {
+      "ar": "عطر مميز",
+      "en": "Signature Perfume",
+      "he": "בושם מעוצב"
+    },
+    "category": "perfumes",
+    "price": 205,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-9.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-082",
+    "slug": "perfume-10",
+    "name": {
+      "ar": "بوكس عطر فاخر",
+      "en": "Deluxe Perfume Box",
+      "he": "מארז בושם יוקרתי"
+    },
+    "category": "perfumes",
+    "price": 240,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-10.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-083",
+    "slug": "perfume-11",
+    "name": {
+      "ar": "عطر بتغليف هدية",
+      "en": "Gift-Wrapped Perfume",
+      "he": "בושם ארוז למתנה"
+    },
+    "category": "perfumes",
+    "price": 215,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-11.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-084",
+    "slug": "perfume-12",
+    "name": {
+      "ar": "عطر كلاسيك",
+      "en": "Classic Perfume",
+      "he": "בושם קלאסי"
+    },
+    "category": "perfumes",
+    "price": 185,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-12.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-085",
+    "slug": "perfume-13",
+    "name": {
+      "ar": "عطر راقٍ",
+      "en": "Refined Perfume",
+      "he": "בושם מעודן"
+    },
+    "category": "perfumes",
+    "price": 220,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-13.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-086",
+    "slug": "perfume-14",
+    "name": {
+      "ar": "عطر بمناسبة خاصة",
+      "en": "Special Occasion Perfume",
+      "he": "בושם לאירוע מיוחד"
+    },
+    "category": "perfumes",
+    "price": 250,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-14.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-087",
+    "slug": "perfume-15",
+    "name": {
+      "ar": "عطر فواح",
+      "en": "Aromatic Perfume",
+      "he": "בושם ארומטי"
+    },
+    "category": "perfumes",
+    "price": 200,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-15.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-088",
+    "slug": "perfume-16",
+    "name": {
+      "ar": "عطر فاخر بعلبة",
+      "en": "Boxed Luxury Perfume",
+      "he": "בושם יוקרתי בקופסה"
+    },
+    "category": "perfumes",
+    "price": 235,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/perfume-16.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-089",
+    "slug": "plaque-3",
+    "name": {
+      "ar": "درع شكر وتقدير",
+      "en": "Appreciation Plaque",
+      "he": "מגן הוקרה"
+    },
+    "category": "plaques",
+    "price": 190,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/plaque-3.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-090",
+    "slug": "plaque-4",
+    "name": {
+      "ar": "درع تكريم مميز",
+      "en": "Signature Honor Plaque",
+      "he": "מגן הוקרה מעוצב"
+    },
+    "category": "plaques",
+    "price": 210,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/plaque-4.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-091",
+    "slug": "plaque-5",
+    "name": {
+      "ar": "شهادة شكر مؤطّرة",
+      "en": "Framed Certificate of Thanks",
+      "he": "תעודת תודה ממוסגרת"
+    },
+    "category": "plaques",
+    "price": 160,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/plaque-5.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-092",
+    "slug": "school-3",
+    "name": {
+      "ar": "حقيبة مدرسية",
+      "en": "School Backpack",
+      "he": "תיק בית ספר"
+    },
+    "category": "school",
+    "price": 120,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/school-3.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-093",
+    "slug": "school-4",
+    "name": {
+      "ar": "طقم قرطاسية",
+      "en": "Stationery Set",
+      "he": "סט מכשירי כתיבה"
+    },
+    "category": "school",
+    "price": 85,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/school-4.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-094",
+    "slug": "school-5",
+    "name": {
+      "ar": "مقلمة مدرسية",
+      "en": "Pencil Case",
+      "he": "קלמר"
+    },
+    "category": "school",
+    "price": 45,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/school-5.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-095",
+    "slug": "school-6",
+    "name": {
+      "ar": "أدوات مدرسية",
+      "en": "School Supplies Kit",
+      "he": "ערכת ציוד לבית ספר"
+    },
+    "category": "school",
+    "price": 95,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/school-6.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-096",
+    "slug": "school-7",
+    "name": {
+      "ar": "دفاتر مدرسية",
+      "en": "School Notebooks",
+      "he": "מחברות בית ספר"
+    },
+    "category": "school",
+    "price": 55,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/school-7.jpeg",
+    "inStock": true
+  },
+  {
+    "id": "p-097",
+    "slug": "school-8",
+    "name": {
+      "ar": "حقيبة مدرسية مميزة",
+      "en": "Premium School Bag",
+      "he": "תיק בית ספר פרימיום"
+    },
+    "category": "school",
+    "price": 100,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/school-8.jpeg",
+    "badges": [
+      "bestSeller"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-098",
+    "slug": "school-9",
+    "name": {
+      "ar": "طقم مدرسي كامل",
+      "en": "Complete School Set",
+      "he": "סט בית ספר מלא"
+    },
+    "category": "school",
+    "price": 165,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/school-9.jpeg",
+    "badges": [
+      "new"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p-099",
+    "slug": "school-10",
+    "name": {
+      "ar": "لوازم مدرسية متنوّعة",
+      "en": "Assorted School Items",
+      "he": "פריטי בית ספר מגוונים"
+    },
+    "category": "school",
+    "price": 110,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "/products/school-10.jpeg",
+    "inStock": true
+  }
+]

@@ -1,0 +1,8 @@
+# Netlify configuration for the Al Malak Next.js app.
+# Netlify auto-detects Next.js and applies its runtime (SSR + API routes via
+# Netlify Functions). Netlify Blobs is available automatically at runtime —
+# no extra config needed; see src/lib/server/store.ts.
+
+[build]
+  command = "npm run build"
+  publish = ".next"

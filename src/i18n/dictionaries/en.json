@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "title": "Al Malak Gifts, Flowers & Printing | Luxury Gifts & Floral Design",
+    "description": "Al Malak — your destination for luxury gifts, natural & artificial flowers, personalized printing, and arrangements for every occasion. Same-day delivery and premium packaging."
+  },
+  "brand": {
+    "name": "Al Malak",
+    "tagline": "Gifts, Printing & Flowers"
+  },
+  "announcement": {
+    "delivery": "Same-day delivery",
+    "location": "Kafr Manda — Arraba Road"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "offers": "Offers",
+    "custom": "Custom Orders",
+    "about": "About",
+    "contact": "Contact",
+    "customize": "Customize Your Gift"
+  },
+  "actions": {
+    "shopNow": "Shop Now",
+    "shopNowShort": "Shop",
+    "customize": "Customize Your Gift",
+    "whatsapp": "Order via WhatsApp",
+    "addToCart": "Add to Cart",
+    "added": "Added",
+    "quickView": "Quick View",
+    "viewAll": "View All",
+    "subscribe": "Subscribe",
+    "search": "Search products...",
+    "orderNow": "Order Now",
+    "readMore": "Read More",
+    "send": "Send"
+  },
+  "hero": {
+    "badge": "Distinctive arrangements for every occasion",
+    "title": "Al Malak Gifts, Printing & Flowers",
+    "subtitle": "Flowers • Gifts • Printing • Arrangements that speak for you",
+    "lead": "We craft unforgettable moments with a luxurious touch and meticulous detail — one gift is enough to say it all.",
+    "stat1": "Happy clients",
+    "stat2": "Average rating",
+    "stat3": "Products"
+  },
+  "categories": {
+    "title": "Shop by Category",
+    "subtitle": "Everything you need for your occasions, in one place",
+    "items": {
+      "natural-flowers": "Flowers",
+      "giveaways": "Giveaways",
+      "weddings": "Weddings",
+      "mugs": "Personalized Mugs",
+      "teddy-gifts": "Teddy Bears & Gifts",
+      "wooden-frames": "Wooden Frames",
+      "perfumes": "Perfumes",
+      "plaques": "Appreciation Plaques",
+      "school": "School Supplies"
+    }
+  },
+  "bestSellers": {
+    "title": "Best Sellers",
+    "subtitle": "Our customers' favourite picks this season"
+  },
+  "categoryPage": {
+    "home": "Home",
+    "results": "products",
+    "empty": "No products in this category yet",
+    "backToProducts": "Browse all categories"
+  },
+  "whyUs": {
+    "title": "Why Al Malak?",
+    "subtitle": "A shopping experience worthy of your moments",
+    "items": {
+      "delivery": {
+        "title": "Same-Day Delivery",
+        "desc": "We deliver your gift quickly and right on time, every time."
+      },
+      "payment": {
+        "title": "Cash on Delivery",
+        "desc": "Pay conveniently in cash when your order arrives."
+      },
+      "packaging": {
+        "title": "Premium Packaging",
+        "desc": "Elegant wrapping worthy of every gift and occasion."
+      },
+      "quality": {
+        "title": "High Quality",
+        "desc": "Carefully selected products to guarantee your satisfaction."
+      }
+    }
+  },
+  "customPrinting": {
+    "badge": "Make it yours",
+    "title": "Design Your Personalized Gift",
+    "subtitle": "Add your photo and text, and see the live preview instantly",
+    "uploadLabel": "Upload your image",
+    "uploadHint": "PNG or JPG — up to 5 MB",
+    "textLabel": "Custom text",
+    "textPlaceholder": "Write a name or a phrase...",
+    "productLabel": "Choose product",
+    "colorLabel": "Background colour",
+    "previewLabel": "Live Preview",
+    "previewDefault": "Your gift appears here",
+    "cta": "Complete order on WhatsApp",
+    "orderTitle": "Personalized Design Order",
+    "products": {
+      "frame": "Wooden Frame",
+      "bag": "Bag",
+      "bottle": "Water Bottle",
+      "mug": "Printed Mug"
+    },
+    "quantityLabel": "Quantity",
+    "fontLabel": "Font style",
+    "textColorLabel": "Text colour",
+    "notesLabel": "Extra notes",
+    "notesPlaceholder": "Any other details you'd like...",
+    "summaryTitle": "Order summary",
+    "priceLabel": "Estimated price",
+    "photoSelected": "Photo attached",
+    "removePhoto": "Remove",
+    "attachNote": "On mobile your photo is sent with the order directly. On desktop, attach it inside the WhatsApp chat after sending the order.",
+    "colorNames": {
+      "cream": "Cream",
+      "sage": "Sage",
+      "blush": "Blush",
+      "champagne": "Champagne",
+      "olive": "Olive",
+      "rose": "Rose",
+      "green": "Green",
+      "black": "Black",
+      "magenta": "Magenta",
+      "gold": "Gold",
+      "white": "White"
+    },
+    "fontNames": {
+      "classic": "Classic",
+      "modern": "Modern",
+      "bold": "Bold"
+    }
+  },
+  "instagram": {
+    "title": "From Instagram",
+    "subtitle": "Our customers' latest moments",
+    "follow": "Follow us on Instagram"
+  },
+  "ai": {
+    "badge": "AI Assistant",
+    "title": "Unsure what to give? Let AI help",
+    "subtitle": "Tell us the occasion and budget, and we'll suggest the perfect gift",
+    "placeholder": "e.g. a wedding gift for a couple, budget ₪200...",
+    "send": "Suggest a gift",
+    "greeting": "Hi! I'm the Al Malak gift assistant. What occasion are you shopping for?",
+    "suggestions": [
+      "Wedding gift under ₪300",
+      "Birthday flowers",
+      "Teacher gift",
+      "Newborn baby gift"
+    ],
+    "you": "You",
+    "thinking": "Searching our collection for your perfect gift...",
+    "resultsLead": "Based on what you need, here are my top picks:",
+    "fallbackLead": "Here are some of our most loved gifts:",
+    "budgetLabel": "Budget",
+    "viewCategory": "Browse category",
+    "reset": "New chat",
+    "reasons": {
+      "match": "Fits your request",
+      "budget": "Within budget",
+      "top": "Top rated",
+      "best": "Best seller"
+    }
+  },
+  "footer": {
+    "tagline": "Al Malak Gifts, Printing & Flowers — crafting moments that delight.",
+    "quickLinksTitle": "Quick Links",
+    "categoriesTitle": "Categories",
+    "contactTitle": "Contact Us",
+    "policies": {
+      "privacy": "Privacy Policy",
+      "returns": "Returns & Exchange Policy",
+      "shipping": "Shipping & Delivery Policy",
+      "faq": "FAQ"
+    },
+    "address": "Kafr Manda — Arraba Road",
+    "rights": "All rights reserved"
+  },
+  "product": {
+    "currency": "₪",
+    "reviews": "reviews",
+    "off": "OFF",
+    "new": "New",
+    "bestSeller": "Best Seller",
+    "outOfStock": "Out of stock"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout",
+    "remove": "Remove"
+  },
+  "common": {
+    "wishlist": "Wishlist",
+    "cart": "Cart",
+    "account": "Account",
+    "menu": "Menu",
+    "close": "Close",
+    "language": "Language"
+  },
+  "cookies": {
+    "message": "We use cookies to improve your experience on our site.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "learnMore": "Learn more"
+  }
+}

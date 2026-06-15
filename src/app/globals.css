@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: "Segoe UI", system-ui, sans-serif;
+    --font-display: Georgia, serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-cream-100 text-ink antialiased;
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  ::selection {
+    @apply bg-blossom-200 text-sage-800;
+  }
+
+  /* Direction-aware horizontal flip helper for decorative icons */
+  [dir="rtl"] .flip-rtl {
+    transform: scaleX(-1);
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold
+      transition-all duration-300 focus-visible:outline-none focus-visible:ring-2
+      focus-visible:ring-offset-2 focus-visible:ring-offset-cream-100 disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-sage-500 text-white shadow-soft hover:bg-sage-600 hover:shadow-card
+      focus-visible:ring-sage-400;
+  }
+
+  .btn-accent {
+    @apply btn bg-blossom-400 text-white shadow-soft hover:bg-blossom-500
+      focus-visible:ring-blossom-300;
+  }
+
+  .btn-outline {
+    @apply btn border border-sage-300 bg-white/70 text-sage-700 backdrop-blur
+      hover:border-sage-500 hover:bg-white focus-visible:ring-sage-300;
+  }
+
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white shadow-soft hover:bg-[#1eb858]
+      focus-visible:ring-[#25D366];
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-bold text-sage-700 sm:text-4xl;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-blossom-50 px-4 py-1.5
+      text-xs font-semibold uppercase tracking-wider text-blossom-500;
+  }
+
+  .card {
+    @apply rounded-3xl border border-cream-300/60 bg-white shadow-soft;
+  }
+
+  .gold-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-gold-300 to-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Logical-direction spacing helpers used by horizontal scrollers */
+  .snap-x-start {
+    scroll-snap-type: x mandatory;
+  }
+}
