@@ -436,23 +436,38 @@ export function CustomPrinting({
                     }}
                   >
                     {image && (
-                      <Image src={image} alt="" fill className="object-cover" unoptimized />
+                      <Image
+                        src={image}
+                        alt=""
+                        fill
+                        className="object-cover"
+                        // blend with the product so it picks up its curves,
+                        // shadows and highlights — looks truly printed on
+                        style={{ mixBlendMode: "multiply" }}
+                        unoptimized
+                      />
                     )}
                     {text && (
                       <span
                         className={cn(
-                          "relative z-10 max-w-full truncate px-1 pb-0.5 text-center text-[13px] font-bold leading-tight",
+                          "relative z-10 max-w-full truncate px-1 pb-0.5 text-center text-[13px] font-bold leading-tight mix-blend-multiply",
                           font.cls,
                         )}
-                        style={{
-                          color: textColor.hex,
-                          textShadow: "0 1px 2px rgba(0,0,0,0.25)",
-                        }}
+                        style={{ color: textColor.hex }}
                       >
                         {text}
                       </span>
                     )}
                   </div>
+                  {/* product sheen: re-draw the template's highlights over the print */}
+                  <Image
+                    src={product.template}
+                    alt=""
+                    fill
+                    sizes="240px"
+                    aria-hidden
+                    className="pointer-events-none object-contain mix-blend-screen opacity-40"
+                  />
                 </div>
               ) : (
                 /* ── frame = the photo itself, as a canvas print ── */
