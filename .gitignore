@@ -16,3 +16,9 @@ next-env.d.ts
 
 # Local admin image uploads (production uploads go to Netlify Blobs)
 /public/products/up-*
+
+# Raw source photos (only the processed /public/products/tpl-* are used)
+/mockup-*
+/WhatsApp Image*
+/kobay*
+/logoz.jpeg

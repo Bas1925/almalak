@@ -23,11 +23,48 @@ type PrintableId = keyof Dictionary["customPrinting"]["products"];
 type ColorId = keyof Dictionary["customPrinting"]["colorNames"];
 type FontId = keyof Dictionary["customPrinting"]["fontNames"];
 
-const PRINTABLES: Array<{ id: PrintableId; emoji: string; price: number }> = [
+interface PrintArea {
+  top: number;
+  left: number;
+  width: number;
+  height: number;
+}
+const PRINTABLES: Array<{
+  id: PrintableId;
+  emoji: string;
+  price: number;
+  /** blank product photo; absent = no template (frame = the photo itself) */
+  template?: string;
+  /** template width / height, so the preview box matches and % map correctly */
+  aspect?: number;
+  /** print area as % of the template, where the photo + text appear */
+  printArea?: PrintArea;
+}> = [
   { id: "frame", emoji: "🖼️", price: 150 },
-  { id: "bag", emoji: "👜", price: 70 },
-  { id: "bottle", emoji: "🍶", price: 55 },
-  { id: "mug", emoji: "☕", price: 65 },
+  {
+    id: "bag",
+    emoji: "👜",
+    price: 70,
+    template: "/products/tpl-bag.jpeg",
+    aspect: 478 / 800,
+    printArea: { left: 18, top: 31, width: 65, height: 47 },
+  },
+  {
+    id: "bottle",
+    emoji: "🍶",
+    price: 55,
+    template: "/products/tpl-bottle.jpeg",
+    aspect: 533 / 800,
+    printArea: { left: 41, top: 47, width: 22, height: 31 },
+  },
+  {
+    id: "mug",
+    emoji: "☕",
+    price: 65,
+    template: "/products/tpl-mug.jpeg",
+    aspect: 533 / 800,
+    printArea: { left: 35, top: 40, width: 41, height: 28 },
+  },
 ];
 
 const FONTS: Array<{ id: FontId; cls: string }> = [
@@ -365,38 +402,87 @@ export function CustomPrinting({
             </span>
 
             <div
-              className="relative flex min-h-[18rem] flex-1 items-center justify-center overflow-hidden rounded-[2rem] border border-cream-300 p-8 shadow-soft transition-colors duration-300"
-              style={{ backgroundColor: bg.hex }}
+              className="relative flex min-h-[20rem] flex-1 items-center justify-center overflow-hidden rounded-[2rem] border border-cream-300 p-6 shadow-soft transition-colors duration-300"
+              style={{ backgroundColor: product.template ? "#15130f" : bg.hex }}
             >
               {/* product + qty badge */}
-              <span className="absolute start-4 top-4 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-sage-700 backdrop-blur">
+              <span className="absolute start-4 top-4 z-10 rounded-full bg-white/85 px-3 py-1 text-xs font-semibold text-sage-700 shadow-soft backdrop-blur">
                 {product.emoji} {productName} × {qty}
               </span>
 
-              <div className="relative flex flex-col items-center gap-4">
-                <div className="relative grid h-44 w-44 place-items-center overflow-hidden rounded-3xl bg-white/70 text-7xl shadow-card backdrop-blur">
-                  {image ? (
-                    <Image
-                      src={image}
-                      alt="preview"
-                      fill
-                      className="rounded-3xl object-cover"
-                      unoptimized
-                    />
-                  ) : (
-                    <span>{product.emoji}</span>
-                  )}
-                </div>
-                <p
-                  className={cn(
-                    "max-w-[14rem] break-words text-center text-xl font-bold",
-                    font.cls,
-                  )}
-                  style={{ color: textColor.hex }}
+              {product.template && product.printArea ? (
+                /* ── realistic product mockup ── */
+                <div
+                  className="relative w-full max-w-[15rem] drop-shadow-xl"
+                  style={{ aspectRatio: String(product.aspect) }}
                 >
-                  {text || cp.previewDefault}
-                </p>
-              </div>
+                  <Image
+                    src={product.template}
+                    alt={productName}
+                    fill
+                    sizes="240px"
+                    className="object-contain"
+                  />
+                  {/* print area: customer's photo + text printed on the product */}
+                  <div
+                    className="absolute flex flex-col items-center justify-end overflow-hidden"
+                    style={{
+                      left: `${product.printArea.left}%`,
+                      top: `${product.printArea.top}%`,
+                      width: `${product.printArea.width}%`,
+                      height: `${product.printArea.height}%`,
+                      backgroundColor: image ? "transparent" : bg.hex,
+                      borderRadius: "2px",
+                    }}
+                  >
+                    {image && (
+                      <Image src={image} alt="" fill className="object-cover" unoptimized />
+                    )}
+                    {text && (
+                      <span
+                        className={cn(
+                          "relative z-10 max-w-full truncate px-1 pb-0.5 text-center text-[13px] font-bold leading-tight",
+                          font.cls,
+                        )}
+                        style={{
+                          color: textColor.hex,
+                          textShadow: "0 1px 2px rgba(0,0,0,0.25)",
+                        }}
+                      >
+                        {text}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ) : (
+                /* ── frame = the photo itself, as a canvas print ── */
+                <div className="relative flex flex-col items-center gap-3">
+                  <div
+                    className="relative grid h-56 w-44 place-items-center overflow-hidden rounded-md bg-white text-6xl shadow-card ring-1 ring-black/10"
+                    style={{ backgroundColor: image ? "#fff" : bg.hex }}
+                  >
+                    {image ? (
+                      <Image src={image} alt="preview" fill className="object-cover" unoptimized />
+                    ) : (
+                      <span>{product.emoji}</span>
+                    )}
+                    {text && (
+                      <span
+                        className={cn(
+                          "absolute inset-x-0 bottom-2 z-10 truncate px-2 text-center text-sm font-bold",
+                          font.cls,
+                        )}
+                        style={{
+                          color: textColor.hex,
+                          textShadow: "0 1px 3px rgba(0,0,0,0.4)",
+                        }}
+                      >
+                        {text}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* order summary */}
