@@ -16,7 +16,7 @@ import { Hero } from "@/components/home/Hero";
 import { Categories } from "@/components/home/Categories";
 import { BestSellers } from "@/components/home/BestSellers";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
-import { CustomPrinting } from "@/components/home/CustomPrinting";
+import { DesignStudio } from "@/components/studio/DesignStudio";
 import { AiAssistant } from "@/components/home/AiAssistant";
 import { InstagramGallery } from "@/components/home/InstagramGallery";
 
@@ -65,7 +65,7 @@ export default async function HomePage({
         <Categories dict={dict} locale={locale} />
         <BestSellers dict={dict} locale={locale} products={bestSellers} />
         <WhyChooseUs dict={dict} />
-        <CustomPrinting dict={dict} locale={locale} />
+        <DesignStudio dict={dict} locale={locale} />
         <AiAssistant dict={dict} locale={locale} products={allProducts} />
         <InstagramGallery dict={dict} />
       </main>
