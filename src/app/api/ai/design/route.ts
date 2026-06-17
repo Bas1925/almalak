@@ -15,7 +15,7 @@ export const maxDuration = 60;
  */
 
 function styledPrompt(prompt: string): string {
-  return `${prompt}, clean print-ready design, vibrant colours, centered composition, high detail, sticker art style`;
+  return `${prompt}, flat vector pop-art illustration, bold screen-print style, limited palette of 2 to 3 colors, clean simplified shapes, high contrast, minimalist, centered composition, isolated on plain white background, professional t-shirt print design`;
 }
 
 async function toDataUrl(res: Response): Promise<string | null> {
