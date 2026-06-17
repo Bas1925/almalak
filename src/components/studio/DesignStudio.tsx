@@ -224,7 +224,7 @@ function Editor({
         <span className="mx-1 hidden text-sm font-semibold text-sage-700 sm:inline">
           {cp.products[product.id]}
         </span>
-        <div className="flex-1" />
+        <div className="hidden flex-1 lg:block" />
         <ToolBtn label={st.undo} onClick={ed.undo} disabled={!ed.canUndo}>
           <Undo2 className="h-4 w-4" />
         </ToolBtn>
@@ -265,7 +265,7 @@ function Editor({
 
       <div className="grid gap-0 lg:grid-cols-[240px_1fr_250px]">
         {/* left: add elements */}
-        <div className="space-y-5 border-cream-300 p-4 lg:border-e">
+        <div className="order-2 space-y-5 border-cream-300 p-4 lg:order-none lg:border-e">
           <button type="button" onClick={ed.addText} className="btn-primary w-full justify-center">
             <Type className="h-4 w-4" />
             {st.addText}
@@ -339,7 +339,7 @@ function Editor({
         </div>
 
         {/* center: canvas */}
-        <div className="flex flex-col items-center justify-start gap-3 bg-cream-100/50 p-4">
+        <div className="order-1 flex flex-col items-center justify-start gap-3 bg-cream-100/50 p-4 lg:order-none">
           <div
             ref={ed.containerRef}
             className="flex max-h-[34rem] w-full justify-center overflow-auto"
@@ -359,7 +359,7 @@ function Editor({
         </div>
 
         {/* right: properties */}
-        <div className="border-cream-300 p-4 lg:border-s">
+        <div className="order-3 border-cream-300 p-4 lg:order-none lg:border-s">
           <p className="mb-3 text-sm font-bold text-sage-700">{st.properties}</p>
           {ed.selection.type === "none" ? (
             <p className="text-xs text-ink-soft">{st.selectHint}</p>
