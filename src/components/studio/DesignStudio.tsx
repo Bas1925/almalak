@@ -129,6 +129,7 @@ function Editor({
   const [aiPrompt, setAiPrompt] = useState("");
   const [aiLoading, setAiLoading] = useState(false);
   const [aiError, setAiError] = useState<string | null>(null);
+  const [aiResults, setAiResults] = useState<string[]>([]);
 
   async function onUpload(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0];
@@ -141,6 +142,7 @@ function Editor({
     if (!p || aiLoading) return;
     setAiLoading(true);
     setAiError(null);
+    setAiResults([]);
     try {
       const res = await fetch("/api/ai/design", {
         method: "POST",
@@ -152,7 +154,7 @@ function Editor({
         return;
       }
       const data = await res.json();
-      if (data?.image) await ed.addImageFromUrl(data.image);
+      if (Array.isArray(data?.images) && data.images.length) setAiResults(data.images);
       else setAiError(cp.aiError);
     } catch {
       setAiError(cp.aiError);
@@ -292,6 +294,33 @@ function Editor({
               {aiLoading ? cp.aiGenerating : cp.aiGenerate}
             </button>
             {aiError && <p className="mt-1.5 text-[11px] font-medium text-blossom-500">{aiError}</p>}
+
+            {aiLoading && (
+              <div className="mt-2 grid grid-cols-2 gap-2">
+                {[0, 1, 2, 3].map((i) => (
+                  <div key={i} className="aspect-square animate-pulse rounded-xl bg-cream-200" />
+                ))}
+              </div>
+            )}
+
+            {!aiLoading && aiResults.length > 0 && (
+              <div className="mt-2">
+                <p className="mb-1.5 text-[10px] font-medium text-ink-soft">{cp.aiUse}</p>
+                <div className="grid grid-cols-2 gap-2">
+                  {aiResults.map((src, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => ed.addImageFromUrl(src)}
+                      className="relative aspect-square overflow-hidden rounded-xl border border-cream-300 bg-white transition hover:-translate-y-0.5 hover:ring-2 hover:ring-sage-400"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={src} alt="" className="h-full w-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {ed.lowRes && (
