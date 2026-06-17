@@ -138,7 +138,17 @@
       "classic": "קלאסי",
       "modern": "מודרני",
       "bold": "מודגש"
-    }
+    },
+    "uploadTab": "העלאה",
+    "aiTab": "עיצוב AI",
+    "aiBadge": "חדש",
+    "aiPromptPlaceholder": "תאר את העיצוב שלך... לדוגמה: אריה חמוד עם משקפי שמש",
+    "aiGenerate": "צור",
+    "aiGenerating": "יוצר...",
+    "aiHint": "כל תיאור יוצר עיצוב חדש לגמרי.",
+    "aiUse": "השתמש בעיצוב הזה",
+    "aiNotConfigured": "מחולל העיצוב ב-AI עדיין לא מוגדר.",
+    "aiError": "יצירת העיצוב נכשלה, נסה שוב."
   },
   "instagram": {
     "title": "מאינסטגרם",

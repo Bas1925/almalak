@@ -13,6 +13,7 @@ import {
   X,
   Pencil,
   Info,
+  Loader2,
 } from "lucide-react";
 import type { Dictionary } from "@/i18n/dictionaries";
 import type { Locale } from "@/i18n/config";
@@ -47,7 +48,7 @@ const PRINTABLES: Array<{
     price: 70,
     template: "/products/tpl-bag.jpeg",
     aspect: 478 / 800,
-    printArea: { left: 18, top: 31, width: 65, height: 47 },
+    printArea: { left: 19, top: 34, width: 63, height: 43 },
   },
   {
     id: "bottle",
@@ -108,7 +109,54 @@ export function CustomPrinting({
   const [productId, setProductId] = useState<PrintableId>(PRINTABLES[0].id);
   const [qty, setQty] = useState(1);
   const [notes, setNotes] = useState("");
+  const [inputMode, setInputMode] = useState<"upload" | "ai">("upload");
+  const [aiPrompt, setAiPrompt] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiError, setAiError] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+
+  function dataUrlToFile(dataUrl: string, name: string): File | null {
+    try {
+      const [head, b64] = dataUrl.split(",");
+      const mime = /data:(.*?);/.exec(head)?.[1] || "image/png";
+      const bin = atob(b64);
+      const arr = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+      return new File([arr], name, { type: mime });
+    } catch {
+      return null;
+    }
+  }
+
+  async function generateAi() {
+    const p = aiPrompt.trim();
+    if (!p || aiLoading) return;
+    setAiLoading(true);
+    setAiError(null);
+    try {
+      const res = await fetch("/api/ai/design", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: p }),
+      });
+      if (!res.ok) {
+        setAiError(res.status === 503 ? cp.aiNotConfigured : cp.aiError);
+        return;
+      }
+      const data = await res.json();
+      if (data?.image) {
+        setImage(data.image);
+        setFileName("ai-design.png");
+        setFile(dataUrlToFile(data.image, "ai-design.png"));
+      } else {
+        setAiError(cp.aiError);
+      }
+    } catch {
+      setAiError(cp.aiError);
+    } finally {
+      setAiLoading(false);
+    }
+  }
 
   function onFile(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0];
@@ -243,16 +291,51 @@ export function CustomPrinting({
               </div>
             </div>
 
-            {/* upload */}
+            {/* design source: upload OR generate with AI */}
             <div>
               <label className="mb-2 block text-sm font-semibold text-sage-700">
                 <Upload className="me-1 inline h-4 w-4" />
                 {cp.uploadLabel}
               </label>
+
+              {/* tabs */}
+              <div className="mb-3 inline-flex rounded-full border border-cream-300 bg-cream-50 p-1 text-xs font-semibold">
+                <button
+                  type="button"
+                  onClick={() => setInputMode("upload")}
+                  className={cn(
+                    "rounded-full px-3 py-1.5 transition",
+                    inputMode === "upload"
+                      ? "bg-white text-sage-700 shadow-soft"
+                      : "text-ink-soft hover:text-sage-700",
+                  )}
+                >
+                  <Upload className="me-1 inline h-3.5 w-3.5" />
+                  {cp.uploadTab}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setInputMode("ai")}
+                  className={cn(
+                    "inline-flex items-center gap-1 rounded-full px-3 py-1.5 transition",
+                    inputMode === "ai"
+                      ? "bg-white text-sage-700 shadow-soft"
+                      : "text-ink-soft hover:text-sage-700",
+                  )}
+                >
+                  <Sparkles className="h-3.5 w-3.5 text-gold-400" />
+                  {cp.aiTab}
+                  <span className="rounded-full bg-blossom-400 px-1.5 text-[9px] text-white">
+                    {cp.aiBadge}
+                  </span>
+                </button>
+              </div>
+
               {image ? (
+                /* a design is selected (uploaded or AI) */
                 <div className="flex items-center gap-3 rounded-2xl border border-sage-200 bg-sage-50 p-2.5">
                   <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl">
-                    <Image src={image} alt="upload" fill className="object-cover" unoptimized />
+                    <Image src={image} alt="design" fill className="object-cover" unoptimized />
                   </div>
                   <span className="min-w-0 flex-1 truncate text-xs font-medium text-sage-700">
                     {fileName || cp.photoSelected}
@@ -266,7 +349,7 @@ export function CustomPrinting({
                     <X className="h-4 w-4" />
                   </button>
                 </div>
-              ) : (
+              ) : inputMode === "upload" ? (
                 <button
                   type="button"
                   onClick={() => fileRef.current?.click()}
@@ -275,7 +358,49 @@ export function CustomPrinting({
                   <Upload className="h-6 w-6 text-sage-400" />
                   <span className="text-xs text-ink-soft">{cp.uploadHint}</span>
                 </button>
+              ) : (
+                /* AI design generator */
+                <div className="space-y-2">
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      value={aiPrompt}
+                      onChange={(e) => setAiPrompt(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          e.preventDefault();
+                          generateAi();
+                        }
+                      }}
+                      placeholder={cp.aiPromptPlaceholder}
+                      className="w-full rounded-2xl border border-cream-300 bg-cream-50 px-4 py-3 text-sm outline-none transition focus:border-sage-400 focus:ring-2 focus:ring-sage-100"
+                    />
+                    <button
+                      type="button"
+                      onClick={generateAi}
+                      disabled={aiLoading || !aiPrompt.trim()}
+                      className="btn-primary shrink-0 disabled:opacity-60"
+                    >
+                      {aiLoading ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <Sparkles className="h-4 w-4" />
+                      )}
+                      <span className="hidden sm:inline">
+                        {aiLoading ? cp.aiGenerating : cp.aiGenerate}
+                      </span>
+                    </button>
+                  </div>
+                  <p className="flex items-start gap-1.5 text-[11px] leading-relaxed text-ink-soft">
+                    <Sparkles className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold-400" />
+                    {cp.aiHint}
+                  </p>
+                  {aiError && (
+                    <p className="text-xs font-medium text-blossom-500">{aiError}</p>
+                  )}
+                </div>
               )}
+
               <input
                 ref={fileRef}
                 type="file"
@@ -423,34 +548,43 @@ export function CustomPrinting({
                     sizes="240px"
                     className="object-contain"
                   />
-                  {/* print area: customer's photo + text printed on the product */}
+                  {/* print area: the customer's photo printed onto the product */}
                   <div
-                    className="absolute flex flex-col items-center justify-end overflow-hidden"
+                    className="absolute overflow-hidden"
                     style={{
                       left: `${product.printArea.left}%`,
                       top: `${product.printArea.top}%`,
                       width: `${product.printArea.width}%`,
                       height: `${product.printArea.height}%`,
-                      backgroundColor: image ? "transparent" : bg.hex,
-                      borderRadius: "2px",
+                      backgroundColor: image ? undefined : bg.hex,
+                      borderRadius: "3px",
                     }}
                   >
                     {image && (
-                      <Image
-                        src={image}
-                        alt=""
-                        fill
-                        className="object-cover"
-                        // blend with the product so it picks up its curves,
-                        // shadows and highlights — looks truly printed on
-                        style={{ mixBlendMode: "multiply" }}
-                        unoptimized
-                      />
+                      <>
+                        <Image src={image} alt="" fill className="object-cover" unoptimized />
+                        {/* the product's own shading, aligned over the print and
+                            multiplied — adds the real curve + shadows of the
+                            product onto the photo WITHOUT washing out its colours */}
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={product.template}
+                          alt=""
+                          aria-hidden
+                          className="pointer-events-none absolute max-w-none mix-blend-multiply"
+                          style={{
+                            width: `${(10000 / product.printArea.width).toFixed(2)}%`,
+                            height: `${(10000 / product.printArea.height).toFixed(2)}%`,
+                            left: `${(-(product.printArea.left / product.printArea.width) * 100).toFixed(2)}%`,
+                            top: `${(-(product.printArea.top / product.printArea.height) * 100).toFixed(2)}%`,
+                          }}
+                        />
+                      </>
                     )}
                     {text && (
                       <span
                         className={cn(
-                          "relative z-10 max-w-full truncate px-1 pb-0.5 text-center text-[13px] font-bold leading-tight mix-blend-multiply",
+                          "absolute inset-x-0 bottom-1 z-10 truncate px-1.5 text-center text-[13px] font-bold leading-tight mix-blend-multiply",
                           font.cls,
                         )}
                         style={{ color: textColor.hex }}
@@ -459,15 +593,6 @@ export function CustomPrinting({
                       </span>
                     )}
                   </div>
-                  {/* product sheen: re-draw the template's highlights over the print */}
-                  <Image
-                    src={product.template}
-                    alt=""
-                    fill
-                    sizes="240px"
-                    aria-hidden
-                    className="pointer-events-none object-contain mix-blend-screen opacity-40"
-                  />
                 </div>
               ) : (
                 /* ── frame = the photo itself, as a canvas print ── */

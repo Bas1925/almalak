@@ -138,7 +138,17 @@
       "classic": "Classic",
       "modern": "Modern",
       "bold": "Bold"
-    }
+    },
+    "uploadTab": "Upload",
+    "aiTab": "AI Design",
+    "aiBadge": "New",
+    "aiPromptPlaceholder": "Describe your design... e.g. a cute lion with sunglasses",
+    "aiGenerate": "Create",
+    "aiGenerating": "Generating...",
+    "aiHint": "Each prompt creates a brand-new design.",
+    "aiUse": "Use this design",
+    "aiNotConfigured": "The AI design generator isn't set up yet.",
+    "aiError": "Couldn't generate the design, please try again."
   },
   "instagram": {
     "title": "From Instagram",
