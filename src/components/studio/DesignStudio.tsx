@@ -187,21 +187,29 @@ function Editor({
     e.target.value = "";
   }
 
-  async function orderWhatsApp() {
+  function orderWhatsApp() {
+    // download the finished design so the customer can attach it in the chat
     const url = ed.exportPNG();
-    const message = `🎨 ${cp.orderTitle} — ${dict.brand.name}\n• ${cp.productLabel}: ${cp.products[product.id]}\n• ${cp.priceLabel}: ${formatPrice(product.price, dict.product.currency)}`;
     if (url) {
-      try {
-        const blob = await (await fetch(url)).blob();
-        const file = new File([blob], `almalak-${product.id}.png`, { type: "image/png" });
-        if (navigator.canShare?.({ files: [file] })) {
-          await navigator.share({ files: [file], text: message, title: cp.orderTitle });
-          return;
-        }
-      } catch {
-        /* fall through */
-      }
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `almalak-${product.id}.png`;
+      a.click();
     }
+    const attach =
+      locale === "ar"
+        ? "📎 أرفق تصميمك (تم تنزيله) داخل المحادثة."
+        : locale === "he"
+          ? "📎 צרף את העיצוב שהורד אל הצ'אט."
+          : "📎 Attach your downloaded design in the chat.";
+    const message = [
+      `🎨 ${cp.orderTitle} — ${dict.brand.name}`,
+      `• ${cp.productLabel}: ${cp.products[product.id]}`,
+      `• ${cp.priceLabel}: ${formatPrice(product.price, dict.product.currency)}`,
+      "",
+      attach,
+    ].join("\n");
+    // always opens a chat with the shop's WhatsApp number (whatsappLink)
     window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
   }
 
