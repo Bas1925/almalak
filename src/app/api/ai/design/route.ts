@@ -55,7 +55,7 @@ async function viaPollinations(prompt: string, count: number): Promise<string[]>
       styledPrompt(prompt),
     )}?width=1024&height=1024&nologo=true&seed=${seed}`;
     const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 18_000);
+    const timer = setTimeout(() => ctrl.abort(), 45_000);
     try {
       return await toDataUrl(await fetch(url, { signal: ctrl.signal }));
     } catch {
