@@ -1,19 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, ArrowRight, MessageCircle } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 import type { Dictionary } from "@/i18n/dictionaries";
 import type { Locale } from "@/i18n/config";
-import { whatsappLink } from "@/lib/utils";
 
 export function Hero({ dict, locale }: { dict: Dictionary; locale: Locale }) {
-  const wa = whatsappLink(
-    locale === "ar"
-      ? "مرحباً، أود الاستفسار عن منتجاتكم 🌸"
-      : locale === "he"
-        ? "שלום, אשמח לקבל פרטים על המוצרים שלכם 🌸"
-        : "Hello, I'd like to ask about your products 🌸",
-  );
-
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-cream-50 to-cream-100">
       {/* decorative blobs */}
@@ -47,22 +38,12 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: Locale }) {
             <Link href={`/${locale}#custom`} className="btn-outline">
               {dict.actions.customize}
             </Link>
-            <a
-              href={wa}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-whatsapp"
-            >
-              <MessageCircle className="h-4 w-4" />
-              {dict.actions.whatsapp}
-            </a>
           </div>
 
           {/* stats */}
-          <dl className="mt-10 grid max-w-md grid-cols-3 gap-4 text-center lg:mx-0">
+          <dl className="mt-10 grid max-w-xs grid-cols-2 gap-4 text-center lg:mx-0">
             {[
               { value: "5K+", label: dict.hero.stat1 },
-              { value: "4.9★", label: dict.hero.stat2 },
               { value: "300+", label: dict.hero.stat3 },
             ].map((s) => (
               <div
