@@ -25,22 +25,23 @@ export const STUDIO_PRODUCTS: StudioProduct[] = [
     id: "frame",
     mockup: "/products/tpl-frame.jpeg",
     aspect: 600 / 750,
-    printArea: { left: 14, top: 11, width: 72, height: 78 },
+    // fills the white mat to its corners (mat ≈17.5–82.5% wide, 14–86% tall)
+    printArea: { left: 17, top: 14, width: 66, height: 72 },
     price: 150,
   },
   {
     id: "bag",
     mockup: "/products/tpl-bag.jpeg",
     aspect: 478 / 800,
-    // fits inside the white panel (≈18–83% wide, ≈29–86% tall)
-    printArea: { left: 19, top: 31, width: 63, height: 52 },
+    // fills the white panel to its corners (panel ≈18–83% wide, ≈29–85% tall)
+    printArea: { left: 18, top: 30, width: 65, height: 55 },
     price: 70,
   },
   {
     id: "bottle",
     mockup: "/products/tpl-bottle.jpeg",
     aspect: 533 / 800,
-    // centered on the bottle body (center ≈ 52% of the image)
+    // centered on the bottle body (body center ≈ 52%)
     printArea: { left: 38, top: 45, width: 28, height: 38 },
     price: 55,
   },
