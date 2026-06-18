@@ -172,9 +172,14 @@ export function useDesignEditor(product: StudioProduct, addTextLabel: string) {
         const a = areaRef.current;
         const ctx = canvas.getContext();
         ctx.save();
-        ctx.strokeStyle = "rgba(255,255,255,0.85)";
         ctx.setLineDash([6, 5]);
+        // dark underlay (visible on light products like the white bag panel)
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "rgba(0,0,0,0.35)";
+        ctx.strokeRect(a.left, a.top, a.width, a.height);
+        // light dashes on top (visible on dark products like the mug/bottle)
         ctx.lineWidth = 1.5;
+        ctx.strokeStyle = "rgba(255,255,255,0.95)";
         ctx.strokeRect(a.left, a.top, a.width, a.height);
         ctx.restore();
       });
