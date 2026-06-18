@@ -19,6 +19,22 @@ export interface StudioProduct {
   price: number;
 }
 
+/** A studio product with its localized name resolved for the current locale. */
+export interface ResolvedStudioProduct extends StudioProduct {
+  name: string;
+}
+
+/**
+ * Editable studio product as shown in the admin panel: a single price plus the
+ * name in all three languages. Defaults come from studio-products.ts + the
+ * dictionaries; the owner can override them and the values persist.
+ */
+export interface StudioAdminItem {
+  id: StudioProductId;
+  price: number;
+  name: { ar: string; en: string; he: string };
+}
+
 /** The four printable products. Names come from the dictionary (localized). */
 export const STUDIO_PRODUCTS: StudioProduct[] = [
   {

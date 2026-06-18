@@ -30,16 +30,24 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import type { Locale } from "@/i18n/config";
 import { cn, formatPrice, whatsappLink } from "@/lib/utils";
 import { SectionHeading } from "../home/Categories";
-import { STUDIO_PRODUCTS, type StudioProduct } from "./studio-products";
+import { STUDIO_PRODUCTS, type ResolvedStudioProduct } from "./studio-products";
 import { useDesignEditor, type EditorSelection } from "./useDesignEditor";
 
 const FONTS = ["Cairo", "Amiri", "Poppins", "Cormorant Garamond", "Heebo"];
 const COLORS = ["#2C2A26", "#FFFFFF", "#6F8049", "#BE4368", "#AE8636", "#2563eb", "#dc2626"];
 
-export function DesignStudio({ dict, locale }: { dict: Dictionary; locale: Locale }) {
+export function DesignStudio({
+  dict,
+  locale,
+  products = STUDIO_PRODUCTS.map((p) => ({ ...p, name: p.id })),
+}: {
+  dict: Dictionary;
+  locale: Locale;
+  products?: ResolvedStudioProduct[];
+}) {
   const cp = dict.customPrinting;
-  const [productId, setProductId] = useState<StudioProduct["id"] | null>(null);
-  const product = STUDIO_PRODUCTS.find((p) => p.id === productId) ?? null;
+  const [productId, setProductId] = useState<ResolvedStudioProduct["id"] | null>(null);
+  const product = products.find((p) => p.id === productId) ?? null;
 
   return (
     <section id="custom" className="bg-gradient-to-b from-sage-50 to-cream-100 py-16 lg:py-20">
@@ -48,7 +56,7 @@ export function DesignStudio({ dict, locale }: { dict: Dictionary; locale: Local
 
         <div className="mx-auto mt-10 max-w-6xl">
           {!product ? (
-            <ProductGrid dict={dict} onSelect={setProductId} />
+            <ProductGrid dict={dict} products={products} onSelect={setProductId} />
           ) : (
             <Editor
               key={product.id}
@@ -68,17 +76,18 @@ export function DesignStudio({ dict, locale }: { dict: Dictionary; locale: Local
 
 function ProductGrid({
   dict,
+  products,
   onSelect,
 }: {
   dict: Dictionary;
-  onSelect: (id: StudioProduct["id"]) => void;
+  products: ResolvedStudioProduct[];
+  onSelect: (id: ResolvedStudioProduct["id"]) => void;
 }) {
-  const cp = dict.customPrinting;
   return (
     <div>
       <p className="mb-6 text-center text-sm font-medium text-ink-soft">{dict.studio.pick}</p>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-        {STUDIO_PRODUCTS.map((p) => (
+        {products.map((p) => (
           <button
             key={p.id}
             type="button"
@@ -88,14 +97,14 @@ function ProductGrid({
             <div className="relative aspect-square w-full overflow-hidden bg-[#15130f]">
               <Image
                 src={p.mockup}
-                alt={cp.products[p.id]}
+                alt={p.name}
                 fill
                 sizes="(max-width:640px) 50vw, 25vw"
                 className="object-contain transition-transform duration-500 group-hover:scale-105"
               />
             </div>
             <div className="flex items-center justify-between p-4">
-              <span className="font-semibold text-ink">{cp.products[p.id]}</span>
+              <span className="font-semibold text-ink">{p.name}</span>
               <span className="font-display font-bold text-sage-600">
                 {formatPrice(p.price, dict.product.currency)}
               </span>
@@ -115,7 +124,7 @@ function Editor({
   locale,
   onBack,
 }: {
-  product: StudioProduct;
+  product: ResolvedStudioProduct;
   dict: Dictionary;
   locale: Locale;
   onBack: () => void;
@@ -204,7 +213,7 @@ function Editor({
           : "📎 Attach your downloaded design in the chat.";
     const message = [
       `🎨 ${cp.orderTitle} — ${dict.brand.name}`,
-      `• ${cp.productLabel}: ${cp.products[product.id]}`,
+      `• ${cp.productLabel}: ${product.name}`,
       `• ${cp.priceLabel}: ${formatPrice(product.price, dict.product.currency)}`,
       "",
       attach,
@@ -222,7 +231,7 @@ function Editor({
           {st.back}
         </button>
         <span className="mx-1 hidden text-sm font-semibold text-sage-700 sm:inline">
-          {cp.products[product.id]}
+          {product.name}
         </span>
         <div className="hidden flex-1 lg:block" />
         <ToolBtn label={st.undo} onClick={ed.undo} disabled={!ed.canUndo}>

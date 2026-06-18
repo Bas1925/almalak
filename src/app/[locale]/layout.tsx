@@ -24,7 +24,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const locale = isLocale(params.locale) ? params.locale : "ar";
   const dict = await getDictionary(locale);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://almalak.example";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://almalakstudio.com";
 
   return {
     metadataBase: new URL(siteUrl),

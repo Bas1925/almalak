@@ -15,11 +15,20 @@ import {
   PackageSearch,
   ExternalLink,
   Star,
+  Palette,
 } from "lucide-react";
 import Link from "next/link";
 import type { Product, CategorySlug } from "@/types";
 import type { Locale } from "@/i18n/config";
 import { formatPrice, cn } from "@/lib/utils";
+import {
+  STUDIO_PRODUCTS,
+  type StudioAdminItem,
+} from "@/components/studio/studio-products";
+
+const STUDIO_MOCKUPS: Record<string, string> = Object.fromEntries(
+  STUDIO_PRODUCTS.map((p) => [p.id, p.mockup]),
+);
 
 interface CatOption {
   slug: CategorySlug;
@@ -28,6 +37,7 @@ interface CatOption {
 
 interface Props {
   initialProducts: Product[];
+  initialStudio: StudioAdminItem[];
   categories: CatOption[];
   locale: Locale;
   currency: string;
@@ -89,7 +99,13 @@ interface FormState {
   image: string;
 }
 
-export function AdminDashboard({ initialProducts, categories, locale, currency }: Props) {
+export function AdminDashboard({
+  initialProducts,
+  initialStudio,
+  categories,
+  locale,
+  currency,
+}: Props) {
   const router = useRouter();
   const [products, setProducts] = useState<Product[]>(initialProducts);
   const [query, setQuery] = useState("");
@@ -97,6 +113,67 @@ export function AdminDashboard({ initialProducts, categories, locale, currency }
   const [form, setForm] = useState<FormState | null>(null);
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
+
+  const [studio, setStudio] = useState<StudioAdminItem[]>(initialStudio);
+  const [studioDraft, setStudioDraft] = useState<StudioAdminItem[] | null>(null);
+  const [savingStudio, setSavingStudio] = useState(false);
+
+  function openStudio() {
+    setStudioDraft(studio.map((s) => ({ ...s, name: { ...s.name } })));
+  }
+
+  function updateStudioDraft(
+    id: string,
+    patch: Partial<Omit<StudioAdminItem, "id" | "name">> & { name?: Partial<StudioAdminItem["name"]> },
+  ) {
+    setStudioDraft((d) =>
+      d
+        ? d.map((s) =>
+            s.id === id
+              ? { ...s, ...patch, name: { ...s.name, ...(patch.name ?? {}) } }
+              : s,
+          )
+        : d,
+    );
+  }
+
+  async function saveStudio() {
+    if (!studioDraft) return;
+    for (const s of studioDraft) {
+      if (!s.name.ar.trim()) {
+        alert("الاسم بالعربية مطلوب لكل منتج تصميم");
+        return;
+      }
+      if (!(Number(s.price) > 0)) {
+        alert("أدخل سعراً صحيحاً لكل منتج تصميم");
+        return;
+      }
+    }
+    setSavingStudio(true);
+    try {
+      const res = await fetch("/api/admin/studio", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          items: studioDraft.map((s) => ({
+            id: s.id,
+            price: Number(s.price),
+            name: s.name,
+          })),
+        }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data.items)) setStudio(data.items);
+        setStudioDraft(null);
+        router.refresh();
+      } else {
+        alert("تعذّر حفظ منتجات التصميم");
+      }
+    } finally {
+      setSavingStudio(false);
+    }
+  }
 
   const catName = useCallback(
     (slug: CategorySlug) => categories.find((c) => c.slug === slug)?.name ?? slug,
@@ -314,10 +391,16 @@ export function AdminDashboard({ initialProducts, categories, locale, currency }
               className="w-full bg-transparent text-sm outline-none"
             />
           </div>
-          <button type="button" onClick={openCreate} className="btn-primary shrink-0">
-            <Plus className="h-4 w-4" />
-            إضافة منتج
-          </button>
+          <div className="flex shrink-0 gap-2">
+            <button type="button" onClick={openStudio} className="btn-outline">
+              <Palette className="h-4 w-4" />
+              صمّم هديتك الشخصية
+            </button>
+            <button type="button" onClick={openCreate} className="btn-primary">
+              <Plus className="h-4 w-4" />
+              إضافة منتج
+            </button>
+          </div>
         </div>
 
         {/* category filter chips */}
@@ -476,6 +559,97 @@ export function AdminDashboard({ initialProducts, categories, locale, currency }
                   إلغاء
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* design studio products modal */}
+      {studioDraft && (
+        <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
+          <div className="absolute inset-0 bg-ink/40 backdrop-blur-sm" onClick={() => setStudioDraft(null)} />
+          <div className="relative max-h-[92vh] w-full max-w-2xl overflow-y-auto rounded-t-3xl bg-cream-50 p-6 shadow-card sm:rounded-3xl">
+            <div className="mb-1 flex items-center justify-between">
+              <h2 className="flex items-center gap-2 font-display text-lg font-bold text-sage-800">
+                <Palette className="h-5 w-5 text-sage-600" />
+                صمّم هديتك الشخصية
+              </h2>
+              <button
+                type="button"
+                onClick={() => setStudioDraft(null)}
+                className="rounded-full p-1.5 text-ink-soft transition hover:bg-white"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <p className="mb-4 text-xs text-ink-soft">
+              عدّل أسماء وأسعار المنتجات القابلة للطباعة في قسم «صمّم هديتك». الاسم بالعربية والسعر مطلوبان.
+            </p>
+
+            <div className="space-y-4">
+              {studioDraft.map((s) => (
+                <div key={s.id} className="card flex flex-col gap-3 p-4 sm:flex-row sm:items-start">
+                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-cream-300 bg-[#15130f]">
+                    <Image
+                      src={STUDIO_MOCKUPS[s.id]}
+                      alt={s.name.ar}
+                      fill
+                      sizes="80px"
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="grid flex-1 gap-3 sm:grid-cols-2">
+                    <Field label="الاسم (عربي) *">
+                      <input
+                        className={inputCls}
+                        value={s.name.ar}
+                        onChange={(e) => updateStudioDraft(s.id, { name: { ar: e.target.value } })}
+                      />
+                    </Field>
+                    <Field label="السعر (₪) *">
+                      <input
+                        type="number"
+                        inputMode="decimal"
+                        className={inputCls}
+                        value={s.price}
+                        onChange={(e) =>
+                          updateStudioDraft(s.id, { price: Number(e.target.value) })
+                        }
+                      />
+                    </Field>
+                    <Field label="Name (English)">
+                      <input
+                        dir="ltr"
+                        className={inputCls}
+                        value={s.name.en}
+                        onChange={(e) => updateStudioDraft(s.id, { name: { en: e.target.value } })}
+                      />
+                    </Field>
+                    <Field label="שם (עברית)">
+                      <input
+                        className={inputCls}
+                        value={s.name.he}
+                        onChange={(e) => updateStudioDraft(s.id, { name: { he: e.target.value } })}
+                      />
+                    </Field>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-5 flex gap-2">
+              <button
+                type="button"
+                onClick={saveStudio}
+                disabled={savingStudio}
+                className="btn-primary flex-1 justify-center disabled:opacity-60"
+              >
+                {savingStudio ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+                حفظ التعديلات
+              </button>
+              <button type="button" onClick={() => setStudioDraft(null)} className="btn-outline">
+                إلغاء
+              </button>
             </div>
           </div>
         </div>

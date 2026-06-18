@@ -23,6 +23,10 @@ const CATALOG_STORE = "almalak-catalog";
 const CATALOG_KEY = "products";
 const IMAGE_STORE = "almalak-images";
 
+const STUDIO_STORE = "almalak-studio";
+const STUDIO_KEY = "config";
+const STUDIO_FILE = path.join(DATA_DIR, "studio.json");
+
 /* ── catalogue ── */
 
 export async function readCatalog(): Promise<Product[] | null> {
@@ -50,6 +54,35 @@ export async function writeCatalog(list: Product[]): Promise<void> {
   }
   fs.mkdirSync(DATA_DIR, { recursive: true });
   fs.writeFileSync(DATA_FILE, JSON.stringify(list, null, 2), "utf-8");
+}
+
+/* ── design studio config (names + prices for the printable products) ── */
+
+export async function readStudio(): Promise<Record<string, unknown> | null> {
+  if (onNetlify) {
+    const { getStore } = await import("@netlify/blobs");
+    const data = (await getStore(STUDIO_STORE).get(STUDIO_KEY, {
+      type: "json",
+    })) as Record<string, unknown> | null;
+    return data ?? null;
+  }
+  try {
+    if (!fs.existsSync(STUDIO_FILE)) return null;
+    const parsed = JSON.parse(fs.readFileSync(STUDIO_FILE, "utf-8"));
+    return parsed && typeof parsed === "object" ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
+export async function writeStudio(config: unknown): Promise<void> {
+  if (onNetlify) {
+    const { getStore } = await import("@netlify/blobs");
+    await getStore(STUDIO_STORE).setJSON(STUDIO_KEY, config);
+    return;
+  }
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+  fs.writeFileSync(STUDIO_FILE, JSON.stringify(config, null, 2), "utf-8");
 }
 
 /* ── images ── */

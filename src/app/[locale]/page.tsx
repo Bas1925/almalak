@@ -2,9 +2,10 @@ import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { notFound } from "next/navigation";
 import { getAllProducts, getBestSellers } from "@/lib/server/catalog";
+import { getStudioProducts } from "@/lib/server/studio";
 import { INSTAGRAM_HANDLE } from "@/lib/utils";
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://almalak.example";
+const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://almalakstudio.com";
 
 export const dynamic = "force-dynamic";
 
@@ -30,6 +31,7 @@ export default async function HomePage({
   const dict = await getDictionary(locale);
   const allProducts = await getAllProducts();
   const bestSellers = await getBestSellers(8);
+  const studioProducts = await getStudioProducts(locale);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -65,7 +67,7 @@ export default async function HomePage({
         <Categories dict={dict} locale={locale} />
         <BestSellers dict={dict} locale={locale} products={bestSellers} />
         <WhyChooseUs dict={dict} />
-        <DesignStudio dict={dict} locale={locale} />
+        <DesignStudio dict={dict} locale={locale} products={studioProducts} />
         <AiAssistant dict={dict} locale={locale} products={allProducts} />
         <InstagramGallery dict={dict} />
       </main>

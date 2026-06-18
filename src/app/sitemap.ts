@@ -3,7 +3,7 @@ import { locales } from "@/i18n/config";
 import { categories } from "@/lib/categories";
 import { policySlugs } from "@/lib/policies";
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://almalak.example";
+const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://almalakstudio.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

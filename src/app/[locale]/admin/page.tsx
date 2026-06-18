@@ -4,6 +4,7 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { categories } from "@/lib/categories";
 import { isAuthed } from "@/lib/admin/auth";
 import { getAllProducts } from "@/lib/server/catalog";
+import { getStudioAdminItems } from "@/lib/server/studio";
 import { AdminLogin } from "@/components/admin/AdminLogin";
 import { AdminDashboard } from "@/components/admin/AdminDashboard";
 
@@ -27,6 +28,7 @@ export default async function AdminPage({
 
   const dict = await getDictionary(locale);
   const products = await getAllProducts();
+  const studioItems = await getStudioAdminItems();
   const cats = categories.map((c) => ({
     slug: c.slug,
     name: dict.categories.items[c.slug],
@@ -35,6 +37,7 @@ export default async function AdminPage({
   return (
     <AdminDashboard
       initialProducts={products}
+      initialStudio={studioItems}
       categories={cats}
       locale={locale}
       currency={dict.product.currency}
